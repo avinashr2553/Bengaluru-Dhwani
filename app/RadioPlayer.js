@@ -90,21 +90,26 @@ export default function RadioPlayer() {
   const [onlineCount, setOnlineCount] = useState(0);
 
   // THEME
-  const [isMonsoon, setIsMonsoon] = useState(false);
+const [theme, setTheme] = useState("summer");
+const [themeMenuOpen, setThemeMenuOpen] = useState(false);
 
   /* =========================
      LOAD SAVED THEME
   ========================= */
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem(
-      "bengaluru-dhwani-theme"
-    );
+useEffect(() => {
+  const savedTheme = localStorage.getItem(
+    "bengaluru-dhwani-theme"
+  );
 
-    if (savedTheme === "monsoon") {
-      setIsMonsoon(true);
-    }
-  }, []);
+  if (
+    savedTheme === "summer" ||
+    savedTheme === "monsoon" ||
+    savedTheme === "auto"
+  ) {
+    setTheme(savedTheme);
+  }
+}, []);
 
   /* =========================
      SUPABASE PRESENCE
@@ -671,20 +676,16 @@ export default function RadioPlayer() {
      THEME
   ========================= */
 
-  const toggleTheme = () => {
-    setIsMonsoon((value) => {
-      const nextValue = !value;
+const changeTheme = (newTheme) => {
+  setTheme(newTheme);
 
-      localStorage.setItem(
-        "bengaluru-dhwani-theme",
-        nextValue
-          ? "monsoon"
-          : "summer"
-      );
+  localStorage.setItem(
+    "bengaluru-dhwani-theme",
+    newTheme
+  );
 
-      return nextValue;
-    });
-  };
+  setThemeMenuOpen(false);
+};
 
   return (
     <main className="radio">
@@ -692,10 +693,10 @@ export default function RadioPlayer() {
       {/* BACKGROUND */}
 
       <div
-        className={`background background-main ${
-          isMonsoon
-            ? "fade-out"
-            : "fade-in"
+        className={`background background-summer ${
+          theme === "summer"
+            ? "fade-in"
+            : "fade-out"
         }`}
         style={{
           backgroundImage:
@@ -704,8 +705,8 @@ export default function RadioPlayer() {
       />
 
       <div
-        className={`background background-theme ${
-          isMonsoon
+        className={`background background-monsoon ${
+          theme === "monsoon"
             ? "fade-in"
             : "fade-out"
         }`}
@@ -714,6 +715,19 @@ export default function RadioPlayer() {
             'url("/themes/monsoon.png")',
         }}
       />
+
+      <div
+        className={`background background-auto ${
+          theme === "auto"
+            ? "fade-in"
+            : "fade-out"
+        }`}
+        style={{
+          backgroundImage:
+            'url("/themes/auto.png")',
+        }}
+      />
+
 
       <div className="shade" />
       <div className="grain" />
@@ -739,15 +753,82 @@ export default function RadioPlayer() {
 
         <div className="links">
 
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Change wallpaper theme"
-          >
-            {isMonsoon
-              ? "SUMMER"
-              : "MONSOON"}
-          </button>
+        <div className="theme-selector">
+
+            <button
+              className="theme-toggle"
+              onClick={() =>
+                setThemeMenuOpen(
+                  (open) => !open
+                )
+              }
+              aria-label="Select theme"
+              aria-expanded={themeMenuOpen}
+            >
+              THEME
+              <span className="theme-chevron">
+                {themeMenuOpen ? "v" : " >"}
+              </span>
+            </button>
+
+            {themeMenuOpen && (
+              <div className="theme-menu">
+
+                <button
+                  className={
+                    theme === "summer"
+                      ? "active"
+                      : ""
+                  }
+                  onClick={() =>
+                    changeTheme("summer")
+                  }
+                >
+                  <span className="theme-icon">
+                    ☀
+                  </span>
+
+                  <span>SUMMER</span>
+                </button>
+
+                <button
+                  className={
+                    theme === "monsoon"
+                      ? "active"
+                      : ""
+                  }
+                  onClick={() =>
+                    changeTheme("monsoon")
+                  }
+                >
+                  <span className="theme-icon">
+                    ◉
+                  </span>
+
+                  <span>MONSOON</span>
+                </button>
+
+                <button
+                  className={
+                    theme === "auto"
+                      ? "active"
+                      : ""
+                  }
+                  onClick={() =>
+                    changeTheme("auto")
+                  }
+                >
+                  <span className="theme-icon">
+                    ▰
+                  </span>
+
+                  <span>AUTO</span>
+                </button>
+
+              </div>
+            )}
+
+      </div>
 
           <a
             href="https://open.spotify.com/"
