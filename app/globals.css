@@ -1144,7 +1144,38 @@ input {
 
   margin-top: 10px;
 
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Subtle glass-style scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(255, 255, 255, 0.38)
+    transparent;
+
+  padding-right: 5px;
+}
+
+/* Chrome / Edge / Safari */
+.items::-webkit-scrollbar {
+  width: 5px;
+}
+
+.items::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.items::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+}
+
+.items::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.items::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .item {
@@ -1242,7 +1273,44 @@ input {
 
   color: rgba(255, 255, 255, 0.45);
 }
+.top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 
+  color: white;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.top-link:hover {
+  opacity: 0.78;
+  transform: translateY(-1px);
+}
+
+.top-link-icon {
+  width: 14px;
+  height: 14px;
+
+  flex: 0 0 14px;
+
+  display: block;
+}
+
+.yt-music-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.coffee-icon {
+  width: 15px;
+  height: 15px;
+}
 
 /* =========================
    MOBILE

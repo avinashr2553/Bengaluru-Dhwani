@@ -97,19 +97,19 @@ const [themeMenuOpen, setThemeMenuOpen] = useState(false);
      LOAD SAVED THEME
   ========================= */
 
-useEffect(() => {
-  const savedTheme = localStorage.getItem(
-    "bengaluru-dhwani-theme"
-  );
+// useEffect(() => {
+//   const savedTheme = localStorage.getItem(
+//     "bengaluru-dhwani-theme"
+//   );
 
-  if (
-    savedTheme === "summer" ||
-    savedTheme === "monsoon" ||
-    savedTheme === "auto"
-  ) {
-    setTheme(savedTheme);
-  }
-}, []);
+//   if (
+//     savedTheme === "summer" ||
+//     savedTheme === "monsoon" ||
+//     savedTheme === "auto"
+//   ) {
+//     setTheme(savedTheme);
+//   }
+// }, []);
 
   /* =========================
      SUPABASE PRESENCE
@@ -831,19 +831,58 @@ const changeTheme = (newTheme) => {
       </div>
 
           <a
-            href="https://open.spotify.com/"
+            href="https://music.youtube.com/playlist?list=PLLRsOv47WAIE&si=WNNWMYQwJxMpdu5l"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            className="top-link"
           >
-            ◉ Spotify
+            <svg
+              className="top-link-icon yt-music-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" fill="currentColor" />
+              <path
+                d="M10 8.7L16 12l-6 3.3V8.7Z"
+                fill="black"
+              />
+            </svg>
+
+            <span>YT Music</span>
           </a>
 
           <a
             href="https://buymeacoffee.com/bengalurudhwani"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            className="top-link"
           >
-          Buy Me Coffee
+            <svg
+              className="top-link-icon coffee-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8h11v6.5A4.5 4.5 0 0 1 11.5 19h-2A4.5 4.5 0 0 1 5 14.5V8Z"
+                fill="currentColor"
+              />
+              <path
+                d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+              <path
+                d="M7 5c0 1 1 1 1 2M11 5c0 1 1 1 1 2"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            <span>Buy Me Coffee</span>
           </a>
 
         </div>
