@@ -758,7 +758,7 @@ export default function RadioPlayer() {
           </a>
 
           <a
-            href="https://buymeacoffee.com/avixrmusico"
+            href="https://buymeacoffee.com/bengalurudhwani"
             target="_blank"
             rel="noreferrer"
           >
