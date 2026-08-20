@@ -3,6 +3,7 @@
 **Bengaluru Dhwani** is a Kannada music radio experience inspired by the sound, atmosphere, and nostalgia of Bengaluru.
 
 The website provides a simple cinematic interface for listening to a curated Kannada music playlist through YouTube, with a custom-built radio player, themed Bengaluru wallpapers, playlist browsing, live listener count, and a minimal glass-style interface.
+<img width="1620" height="857" alt="summer" src="https://github.com/user-attachments/assets/826a105e-61a9-4bd1-9f6d-cfab89681bea" />
 
 ## ✨ Features
 
@@ -61,3 +62,8 @@ The selected theme applies instantly, while refreshing the page returns to the d
 
 ### 👥 Live Listener Count
 Display the number of currently connected listeners.
+
+❤️ Bengaluru Dhwani
+ಕನ್ನಡ ಸಂಗೀತದೊಂದಿಗೆ ಬೆಂಗಳೂರಿನ ಧ್ವನಿ
+
+A little bit of Bengaluru, wherever you are.
