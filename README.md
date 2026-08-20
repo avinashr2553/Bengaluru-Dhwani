@@ -57,7 +57,7 @@ The selected theme applies instantly, while refreshing the page returns to the d
 - Subtle grain effect
 - Glass-style controls
 - Minimal typography
-- Responsive layout
+
 
 ### 📋 Playlist Panel
 - Slide-out playlist panel
