@@ -60,4 +60,4 @@ The selected theme applies instantly, while refreshing the page returns to the d
 - Designed to blend with the glass UI
 
 ### 👥 Live Listener Count
-The website uses Supabase Presence to display the number of currently connected listeners.
+Display the number of currently connected listeners.
