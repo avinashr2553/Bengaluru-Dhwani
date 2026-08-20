@@ -1,41 +1,63 @@
-# Bengaluru Dhwani — Next.js
+# Bengaluru Dhwani 🎵
 
-This is the Next.js version of the Bengaluru Dhwani radio site.
+**Bengaluru Dhwani** is a Kannada music radio experience inspired by the sound, atmosphere, and nostalgia of Bengaluru.
 
-## Hardcoded playlist
+The website provides a simple cinematic interface for listening to a curated Kannada music playlist through YouTube, with a custom-built radio player, themed Bengaluru wallpapers, playlist browsing, live listener count, and a minimal glass-style interface.
 
-The YouTube playlist is hardcoded in:
+## ✨ Features
 
-`app/RadioPlayer.js`
+### 🎵 Custom Radio Player
+- Custom-built music player interface
+- Play / Pause controls
+- Previous / Next track controls
+- Progress bar with seeking
+- Current track title and artwork
+- Track duration and playback progress
+- Smooth rotating album artwork while playing
 
-```js
-const PLAYLIST_ID = "Your Playlist";
-```
+### 🔊 Volume Controls
+- Custom volume slider
+- Mute / Unmute control
+- Real-time volume adjustment
+- Integrated volume controls designed to match the player UI
 
-No playlist input is shown to visitors.
+### 📻 YouTube Music Playlist
+- Uses a dedicated YouTube playlist as the music source
+- Automatically loads playlist tracks
+- Displays track artwork and titles
+- Click any track to play it directly
+- Automatically moves through the playlist
+- Loops back to the first song after the final track
 
-## Run
+### 🎨 Theme Selector
 
-Requirements: Node.js 18.18+.
+Choose between three Bengaluru-inspired visual themes:
 
-```bash
-npm install
-npm run dev
-```
+- ☀️ **Summer** — warm Bengaluru atmosphere
+- 🌧️ **Monsoon** — rainy Bengaluru atmosphere
+- 🛺 **Auto** — Bengaluru auto-rickshaw inspired theme
 
-Then open:
+Themes smoothly fade between wallpapers without interrupting music playback.
 
-`http://localhost:3000`
+The selected theme applies instantly, while refreshing the page returns to the default Summer wallpaper.
 
-For production:
+### 🌆 Cinematic Bengaluru Interface
+- Full-screen photographic wallpapers
+- Smooth background transitions
+- Dark cinematic overlay
+- Subtle grain effect
+- Glass-style controls
+- Minimal typography
+- Responsive layout
 
-```bash
-npm run build
-npm start
-```
+### 📋 Playlist Panel
+- Slide-out playlist panel
+- Displays available tracks
+- Shows current track
+- Track thumbnails
+- One-click track selection
+- Custom styled scrollbar
+- Designed to blend with the glass UI
 
-## Playback
-
-Browsers block automatic audio playback in many situations. The playlist is initialized when the page loads, but the user should press the round Play button to start audio.
-
-The YouTube IFrame Player API is loaded client-side and the custom Bengaluru Dhwani UI controls it.
+### 👥 Live Listener Count
+The website uses Supabase Presence to display the number of currently connected listeners.
