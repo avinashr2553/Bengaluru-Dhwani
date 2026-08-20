@@ -9,7 +9,7 @@ The YouTube playlist is hardcoded in:
 `app/RadioPlayer.js`
 
 ```js
-const PLAYLIST_ID = "PLGReFY4njrBvbnuylNGCaPfNR4jZ62SVA";
+const PLAYLIST_ID = "Your Playlist";
 ```
 
 No playlist input is shown to visitors.
