@@ -1,6 +1,6 @@
 # Bengaluru Dhwani 🎵
 
-**Bengaluru Dhwani** is a Kannada music radio experience inspired by the sound, atmosphere, and nostalgia of Bengaluru.
+[**Bengaluru Dhwani**](https://bengalurudhwani.vercel.app) is a Kannada music radio experience inspired by the sound, atmosphere, and nostalgia of Bengaluru.
 
 The website provides a simple cinematic interface for listening to a curated Kannada music playlist through YouTube, with a custom-built radio player, themed Bengaluru wallpapers, playlist browsing, live listener count, and a minimal glass-style interface.
 
