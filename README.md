@@ -43,10 +43,10 @@ Themes smoothly fade between wallpapers without interrupting music playback.
 
 The selected theme applies instantly, while refreshing the page returns to the default Summer wallpaper.
 
-<img width="1080" height="1080" alt="641shots_so" src="https://github.com/user-attachments/assets/cfb523b8-062a-4fd8-b962-b18eb624ddf8" />
-<img width="1080" height="1080" alt="769shots_so" src="https://github.com/user-attachments/assets/6bd599f1-522d-41b4-b7fd-1939e80595a9" />
-<img width="1080" height="1080" alt="104shots_so" src="https://github.com/user-attachments/assets/eb6ccda1-2205-43f5-b777-b9cd20f828cb" />
-<img width="1080" height="1080" alt="36shots_so" src="https://github.com/user-attachments/assets/9cf5cf03-7a04-4b1b-b468-49cfce7eab93" />
+<img width="500" height="500" alt="641shots_so" src="https://github.com/user-attachments/assets/cfb523b8-062a-4fd8-b962-b18eb624ddf8" />
+<img width="500" height="500" alt="769shots_so" src="https://github.com/user-attachments/assets/6bd599f1-522d-41b4-b7fd-1939e80595a9" />
+<img width="500" height="500" alt="104shots_so" src="https://github.com/user-attachments/assets/eb6ccda1-2205-43f5-b777-b9cd20f828cb" />
+<img width="500" height="500" alt="36shots_so" src="https://github.com/user-attachments/assets/9cf5cf03-7a04-4b1b-b468-49cfce7eab93" />
 
 
 
@@ -71,7 +71,21 @@ The selected theme applies instantly, while refreshing the page returns to the d
 ### 👥 Live Listener Count
 Display the number of currently connected listeners.
 
+🕐 Live Clock
+    A real-time clock is displayed in the top navigation and updates automatically.
+
+▶️ YouTube Music Integration
+    A direct YT Music link is available from the top navigation, allowing listeners to open the Bengaluru Dhwani playlist directly in YouTube Music.
+
+
+
+☕ Support Bengaluru Dhwani
+    [Buy Me a Coffee](https://buymeacoffee.com/bengalurudhwani)
+  
+
+
 ❤️ Bengaluru Dhwani
+
 ಕನ್ನಡ ಸಂಗೀತದೊಂದಿಗೆ ಬೆಂಗಳೂರಿನ ಧ್ವನಿ
 
 A little bit of Bengaluru, wherever you are.
