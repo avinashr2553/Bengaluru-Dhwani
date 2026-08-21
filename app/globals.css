@@ -1663,9 +1663,9 @@ input {
   }
 
   .volume-slider {
-    width: 39px;
+    width: 20px;
 
-    min-width: 39px;
+    min-width: 35px;
   }
 
 
