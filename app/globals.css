@@ -37,12 +37,19 @@ input {
 
 .radio {
   position: relative;
+
   width: 100vw;
   height: 100vh;
+
+  /* Modern mobile viewport */
+  height: 100dvh;
+
+  min-height: 100svh;
+
   overflow: hidden;
+
   isolation: isolate;
 }
-
 
 /* =========================
    BACKGROUND
@@ -1316,118 +1323,355 @@ input {
    MOBILE
 ========================= */
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 720px) {
 
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    overscroll-behavior: none;
+  }
+
+  .radio {
+    width: 100vw;
+
+    height: 100dvh;
+
+    min-height: 100svh;
+
+    overflow: hidden;
+  }
+
+
+  /* =========================
+     BACKGROUND
+  ========================= */
+
+  .background {
+    background-position: center center;
+    background-size: cover;
+  }
+
+
+  /* =========================
+     TOP BAR
+  ========================= */
+
   .topbar {
-    left: 16px;
-    right: 16px;
-    top: 16px;
+    left: 14px;
+    right: 14px;
+
+    top: max(
+      14px,
+      env(safe-area-inset-top)
+    );
+
+    height: 30px;
+  }
+
+  .time {
+    font-size: 10px;
   }
 
   .online {
     position: static;
+
     transform: none;
+
+    font-size: 10px;
   }
 
   .links {
     display: none;
   }
 
-  .brand-main {
-    font-size: clamp(
-      52px,
-      15vw,
-      90px
-    );
+
+  /* =========================
+     LIVE PILL
+  ========================= */
+
+  .live-pill {
+    top: 72px;
+
+    font-size: 8px;
+
+    padding: 7px 11px;
   }
 
+
+  /* =========================
+     KANNADA TITLE
+  ========================= */
+
+  .brand {
+    top: 31%;
+
+    width: 100%;
+
+    padding: 0 15px;
+
+    text-align: center;
+  }
+
+  .brand-main {
+    font-size: clamp(
+      42px,
+      13vw,
+      62px
+    );
+
+    line-height: 1.05;
+
+    white-space: normal;
+  }
+
+
+  /* =========================
+     PLAYER
+  ========================= */
+
   .player {
-    width: calc(100vw - 20px);
+    /*
+     * Fixed is important on iPhone.
+     * It prevents Safari's dynamic
+     * viewport from pushing the
+     * player underneath the browser UI.
+     */
 
-    height: 88px;
+    position: fixed;
 
-    bottom: 14px;
+    z-index: 100;
+
+    left: 50%;
+
+    bottom: calc(
+      12px + env(safe-area-inset-bottom)
+    );
+
+    transform: translateX(-50%);
+
+    width: calc(
+      100vw - 20px
+    );
+
+    max-width: 390px;
+
+    height: 82px;
 
     padding: 7px 9px 7px 7px;
 
-    gap: 9px;
+    gap: 8px;
+
+    border-radius: 42px;
+
+    overflow: hidden;
   }
 
-  .art {
-    width: 62px;
-    height: 62px;
 
-    flex-basis: 62px;
+  /* =========================
+     ARTWORK
+  ========================= */
+
+  .art {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
   }
 
   .art img {
-    transform: scale(1.4);
+    transform: scale(1.35);
   }
 
   .spinning img {
-    animation: spin-mobile 9s linear infinite;
+    animation:
+      spin-mobile
+      9s linear infinite;
   }
 
   @keyframes spin-mobile {
+
     from {
-      transform: scale(1.4) rotate(0deg);
+      transform:
+        scale(1.35)
+        rotate(0deg);
     }
 
     to {
-      transform: scale(1.4) rotate(360deg);
+      transform:
+        scale(1.35)
+        rotate(360deg);
     }
+
+  }
+
+
+  /* =========================
+     TRACK
+  ========================= */
+
+  .track {
+    min-width: 0;
+
+    flex: 1;
   }
 
   .title {
-    font-size: 13px;
+    font-size: 12px;
+
     font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
   }
 
   .artist {
-    font-size: 10px;
+    font-size: 9px;
+
     font-weight: 500;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
   }
+
+
+  /* =========================
+     PROGRESS
+  ========================= */
 
   .progress {
-    grid-template-columns: 30px 1fr 34px;
+    grid-template-columns:
+      27px
+      minmax(0, 1fr)
+      30px;
 
-    gap: 5px;
+    gap: 4px;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
-    font-size: 8px;
+    font-size: 7px;
   }
+
+
+  /* =========================
+     CONTROLS
+  ========================= */
 
   .controls {
-    width: 150px;
-    min-width: 150px;
+    width: 132px;
 
-    gap: 5px;
+    min-width: 132px;
+
+    flex: 0 0 132px;
+
+    gap: 3px;
+
+    justify-content: center;
   }
+
+
+  /* =========================
+     SKIP BUTTONS
+  ========================= */
+
+  .skip-button {
+    width: 20px;
+
+    height: 30px;
+
+    flex: 0 0 20px;
+  }
+
+  .previous-button .skip-line {
+    left: 7px;
+
+    height: 13px;
+  }
+
+  .previous-button .skip-arrow {
+    left: 9px;
+
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+
+    border-right-width: 8px;
+  }
+
+  .next-button .skip-arrow {
+    left: 3px;
+
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+
+    border-left-width: 8px;
+  }
+
+  .next-button .skip-line {
+    left: 13px;
+
+    height: 13px;
+  }
+
+
+  /* =========================
+     PLAY BUTTON
+  ========================= */
 
   .controls .play {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
-    flex-basis: 42px;
+    flex: 0 0 40px;
   }
 
-  .volume-slider {
-    width: 45px;
+  .play-icon {
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+
+    border-left-width: 12px;
   }
+
+
+  /* =========================
+     VOLUME
+  ========================= */
 
   .volume-control {
-    gap: 4px;
+    gap: 3px;
+
+    margin-left: 1px;
   }
 
   .volume-button {
-    width: 22px;
+    width: 21px;
+    height: 28px;
+
+    transform: scale(1);
   }
 
-  .skip-button {
-    width: 21px;
-    flex-basis: 21px;
+  .volume-slider {
+    width: 39px;
+
+    min-width: 39px;
   }
+
+
+  /* =========================
+     PLAYLIST
+  ========================= */
 
   .playlist-toggle {
     display: none;
@@ -1436,4 +1680,14 @@ input {
   .status {
     display: none;
   }
+
+
+  /* =========================
+     SAFE AREA
+  ========================= */
+
+  .player {
+    margin-bottom: 0;
+  }
+
 }
